@@ -10,8 +10,6 @@ export class GrandChildComponent  implements AfterContentInit{
   @ContentChild('myTemplate') template!: TemplateRef<any>;
 
   ngAfterContentInit() {
-    if (!this.template) {
-      console.warn('Template not found in GrandChildComponent');
-    }
+    console.log('Template received in grandchild:', !!this.template);
   }
 }
