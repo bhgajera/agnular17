@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { CustomTemplateDirective } from './directives/custom-template.directive';
+import { CustomTemplateDirective } from './custom-template.directive';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { GrandChildComponent } from './grand-child/grand-child.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { GrandChildComponent } from './grand-child/grand-child.component';
     GrandChildComponent
   ],
   imports: [
+    BrowserModule
   ],
   providers: [
     provideAnimationsAsync(),

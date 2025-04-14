@@ -1,16 +1,17 @@
-import { AfterContentInit, Component, ContentChild, TemplateRef } from '@angular/core';
+import { AfterContentInit, Component, ContentChild, Input, TemplateRef } from '@angular/core';
 import { CustomTemplateDirective } from '../custom-template.directive';
 
 @Component({
-  selector: 'app-grandchild',
+  selector: 'app-grand-child',
   templateUrl: './grand-child.component.html',
   styleUrl: './grand-child.component.scss'
 })
 export class GrandChildComponent  implements AfterContentInit{
-  @ContentChild(CustomTemplateDirective)
-  templateDirective!: CustomTemplateDirective;
+  @ContentChild('myTemplate') template!: TemplateRef<any>;
 
   ngAfterContentInit() {
-    console.log('GrandChild: templateDirective', this.templateDirective);
+    if (!this.template) {
+      console.warn('Template not found in GrandChildComponent');
+    }
   }
 }
