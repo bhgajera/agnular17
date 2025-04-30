@@ -7,7 +7,7 @@ import { CustomTemplateDirective } from '../custom-template.directive';
   styleUrl: './grand-child.component.scss'
 })
 export class GrandChildComponent  implements AfterContentInit{
-  @ContentChild('myTemplate') template!: TemplateRef<any>;
+  @ContentChild('myTemplate',{descendants:true}) template!: TemplateRef<any>;
 
   ngAfterContentInit() {
     console.log('Template received in grandchild:', !!this.template);
