@@ -1,5 +1,13 @@
 <p>child works!</p>
 <!-- child.component.html -->
+<h1>
+  For Mobile
+</h1>
+<ng-container *ngTemplateOutlet="templateForChild"></ng-container>
+<h1>
+  For Desktop
+</h1>
+<ng-container *ngTemplateOutlet="templateForChild"></ng-container>
 <app-grand-child>
     <ng-content></ng-content>
   </app-grand-child>

@@ -1,8 +1,11 @@
 <p>parent works!</p>
 <app-child>
   <div>
-    <ng-template #myTemplate>
-      <p>This is projected from parent!</p>
+    <ng-template #templateForChild>
+      <p>This is projected from parent to child!</p>
+    </ng-template>
+    <ng-template #templateForGrandchild>
+      <p>This is projected from parent to grand child!</p>
     </ng-template>
   </div>
 </app-child>

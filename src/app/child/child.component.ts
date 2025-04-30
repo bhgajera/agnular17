@@ -6,5 +6,5 @@ import { Component, ContentChild, TemplateRef } from '@angular/core';
   styleUrl: './child.component.scss'
 })
 export class ChildComponent {
-  
+  @ContentChild('templateForChild',{descendants:true}) templateForChild!: TemplateRef<any>;
 }
